@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кузьмин Вячеслав, 5130903/30302</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap&subset=cyrillic"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="currentPlayer-container">
+            <span id="currentPlayerLabel">Текущий игрок: </span>
+            <span id="currentPlayerValue">Slavik78</span>
+        </div>
+        <nav id="nav-menu">
+            <a href="../index.html">Регистрация</a>
+            <a href=#>Игроки</a>
+            <a href=#>Вернуться на сайт</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="content">
+            <div id="level-select-screen" class="screen active">
+                <div class="levels-container">
+                    <h2>Попади в цель</h2>
+                    <div class="level-cards">
+                        <div class="level-card" data-level="1">
+                            <div class="level-number">1</div>
+                            <h3>Сложность:</h3>
+                            <div class="buttons-container">
+                                <button class="easyModeBtn" onclick="startGame(1, 'easy')">Easy</button>
+                                <button class="hardModeBtn" onclick="startGame(1, 'hard')">Hard</button>
+                            </div>
+                        </div>
+                        <div class="level-card" data-level="2">
+                            <div class="level-number">2</div>
+                            <h3>Сложность:</h3>
+                            <div class="buttons-container">
+                                <button class="easyModeBtn" onclick="startGame(2, 'easy')">Easy</button>
+                                <button class="hardModeBtn" onclick="startGame(2, 'hard')">Hard</button>
+                            </div>
+                        </div>
+                        <div class="level-card" data-level="3">
+                            <div class="level-number">3</div>
+                            <h3>Сложность:</h3>
+                            <div class="buttons-container">
+                                <button class="easyModeBtn" onclick="startGame(3, 'easy')">Easy</button>
+                                <button class="hardModeBtn" onclick="startGame(3, 'hard')">Hard</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>FingerBall</h2>
+                    <div class="fingerBall-level-cards" onclick="window.location.href='fingerGame/fingerBall.html'">
+                        <div class="fingerBall-level-card" data-level="1">
+                            Играть
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="game-screen" class="screen">
+                <div class="game-header">
+                    <button id="back-to-levels">← Выбор уровня</button>
+                    <div class="game-info">
+                        <span>Уровень: <span id="current-level-display">1</span></span>
+                        <span>Сложность: <span id="current-difficulty-display">easy</span></span>
+                        <span>Время: <span id="time-left">60</span>с</span>
+                        <span>Очки: <span id="score">0</span>/<span id="target-score">5</span></span>
+                    </div>
+                </div>
+                <div id="game">
+                    <div class="ground"></div>
+                    <div class="net"></div>
+                    <div id="target-zone"></div>
+                    <div id="ball"></div>
+                </div>
+                <div class="game-instruction">
+                    Удерживай ЛКМ для заряда удара → отпусти, чтобы ударить мяч
+                </div>
+            </div>
+
+            <div id="result-screen" class="screen">
+                <div class="result-content">
+                    <h2 id="result-title">Результат</h2>
+                    <p id="result-message"></p>
+                    <div class="result-actions">
+                        <button id="restart-btn" class="result-btn">Играть снова</button>
+                        <button id="level-select-btn" class="result-btn">Выбор уровня</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span style="color: rgb(148, 139, 255); margin-left: 1.5rem;">Вариант 15 - Волейбол</span>
+    </footer>
+    <script src="../common_js/page_marker.js" defer></script>
+    <script src="game.js" defer></script>
+</body>
+
+</html>
