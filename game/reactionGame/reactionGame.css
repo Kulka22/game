@@ -1,0 +1,228 @@
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#start-screen.active {
+    display: flex;
+}
+
+.start-btn {
+    padding: 12px 20px;
+    margin: 1rem;
+    background: rgba(149, 139, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.start-btn:hover {
+    background: rgba(149, 139, 255, 0.7);
+    cursor: pointer;
+}
+
+.game-info {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-info span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.game-info span span:last-child {
+    font-size: 1.5em;
+    color: rgba(149, 139, 255);
+}
+
+#result-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#result-screen.active {
+    display: flex;
+}
+
+.result-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.result-content h2 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.result-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.result-btn {
+    padding: 12px 20px;
+    background: rgba(149, 139, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.result-btn:hover {
+    background: rgba(149, 139, 255, 0.7);
+    cursor: pointer;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    flex: 1;
+    flex-direction: column;
+}
+
+.screen.active {
+    display: flex;
+}
+
+#game-screen {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    margin-top: 0 !important;
+    background: #e9e9e9;
+}
+
+body {
+    margin: 0;
+}
+
+#game {
+    width: 950px;
+    height: 500px;
+    position: relative;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #9fd3ff;
+    overflow: hidden;
+    margin: 200px auto 30px auto;
+}
+
+#ground {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background: #d39b55;
+    bottom: 0;
+}
+
+.net {
+    position: absolute;
+    left: 475px;
+    bottom: 80px;
+    width: 8px;
+    height: 160px;
+    background: #2b2b2b;
+}
+
+.player {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, #FF6347, #DC143C);
+    border-radius: 50%;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+.ball {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 30% 30%, #FFD700, #FF8C00);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #DAA520;
+    z-index: 15;
+}
+
+.game-instruction {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+    font-family: 'Roboto';
+    font-weight: 450;
+}
+
+.score-effect {
+    position: absolute;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #4CAF50;
+    animation: scoreFloat 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 1000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, 0);
+    opacity: 0;
+}
+
+@keyframes scoreFloat {
+    0% {
+        transform: translate(-50%, 0) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(-50%, -20px) scale(1.2);
+        opacity: 1;
+        color: #24ffde;
+    }
+    40% {
+        transform: translate(-50%, -40px) scale(1);
+        color: #4CAF50;
+    }
+    100% {
+        transform: translate(-50%, -80px) scale(0.8);
+        opacity: 0;
+    }
+}

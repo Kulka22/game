@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 15 - Волейбол</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap&subset=cyrillic"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="currentPlayer-container">
+            <span id="currentPlayerLabel">Текущий игрок: </span>
+            <span id="currentPlayerValue"></span>
+        </div>
+        <nav id="nav-menu">
+            <a href="../index.html">Регистрация</a>
+            <a href="../players/players.html">Игроки</a>
+            <a href=#>Вернуться на сайт</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="content">
+            <div id="level-select-screen" class="screen active">
+                <h2 id="main-header">Волейбол 2D</h2>
+                <div class="levels-container">
+                    <h2>Попади в цель</h2>
+                    <div class="level-cards">
+                        <div class="level-card" id="level-1" data-level="1">
+                            <div class="level-number">1</div>
+                            <h3>Сложность:</h3>
+                            <div class="buttons-container">
+                                <button class="easyModeBtn" onclick="startGame(1, 'easy')">Easy</button>
+                                <button class="hardModeBtn" onclick="startGame(1, 'hard')">Hard</button>
+                            </div>
+                        </div>
+                        <div class="level-card disabled" id="level-2" data-level="2">
+                            <div class="level-number">2</div>
+                            <h3>Сложность:</h3>
+                            <div class="buttons-container">
+                                <button class="easyModeBtn" onclick="startGame(2, 'easy')">Easy</button>
+                                <button class="hardModeBtn" onclick="startGame(2, 'hard')">Hard</button>
+                            </div>
+                        </div>
+                        <div class="level-card disabled" id="level-3" data-level="3">
+                            <div class="level-number">3</div>
+                            <h3>Сложность:</h3>
+                            <div class="buttons-container">
+                                <button class="easyModeBtn" onclick="startGame(3, 'easy')">Easy</button>
+                                <button class="hardModeBtn" onclick="startGame(3, 'hard')">Hard</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>FingerBall</h2>
+                    <div class="another-level-cards" onclick="window.location.href='fingerGame/fingerBall.html'">
+                        <div class="another-level-card">
+                            Играть
+                        </div>
+                    </div>
+                    <h2>Игра на реакцию</h2>
+                    <div class="another-level-cards" onclick="window.location.href='reactionGame/reactionGame.html'">
+                        <div class="another-level-card">
+                            Играть
+                        </div>
+                    </div>
+
+                    <div class="customization-section">
+                        <button class="customization-btn"
+                            onclick="window.location.href='customization/customization.html'">
+                            🎨 Настроить цвета всех игр
+                        </button>
+                    </div>
+                </div>
+                <button id="unlockAllLevelsBtn" onclick="unlockAllLevels()">Открыть все уровни</button>
+            </div>
+
+            <div id="game-screen" class="screen">
+                <div class="game-header">
+                    <button id="back-to-levels">← Выбор уровня</button>
+                    <div class="game-info">
+                        <span>Уровень: <span id="current-level-display">1</span></span>
+                        <span>Сложность: <span id="current-difficulty-display">easy</span></span>
+                        <span>Время: <span id="time-left">60</span>с</span>
+                        <span>Очки: <span id="score">0</span>/<span id="target-score">5</span></span>
+                    </div>
+                </div>
+                <div id="game">
+                    <div class="ground"></div>
+                    <div class="net"></div>
+                    <div id="target-zone"></div>
+                    <div id="ball"></div>
+                </div>
+                <div class="game-instruction">
+                    Удерживать ЛКМ для "зарядки" мяча. Отпустить, чтобы ударить мяч
+                </div>
+            </div>
+
+            <div id="result-screen" class="screen">
+                <div class="result-content">
+                    <h2 id="result-title">Результат</h2>
+                    <p id="result-message"></p>
+                    <div class="result-actions">
+                        <button id="restart-btn" class="result-btn">Играть снова</button>
+                        <button id="level-select-btn" class="result-btn">Выбор уровня</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span style="color: rgb(148, 139, 255); margin-left: 1.5rem;">Вариант 15 - Волейбол</span>
+    </footer>
+    <script>
+        const playerName = localStorage.getItem('currentPlayer');
+        if (playerName) {
+            document.getElementById('currentPlayerValue').textContent = playerName;
+        } else {
+            window.location.href = '../index.html';
+        }
+    </script>
+    <script src="../common_js/page_marker.js" defer></script>
+    <script src="game.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finger Ball</title>
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="fingerBall.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap&subset=cyrillic"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="main">
+        <section class="content">
+            <div id="finger-game-screen" class="screen active">
+                <div id="game">
+                    <div id="hand-cursor"></div>
+
+                    <div id="ball"></div>
+
+                    <div class="score-board">
+                        <span>Очки: <span id="score">0</span></span>
+                        <span>Рекорд: <span id="record">0</span></span>
+                    </div>
+
+                    <button id="restart-btn">Заново</button>
+                    <button id="back-btn">← Назад</button>
+                </div>
+            </div>
+
+            <div id="result-screen" class="screen">
+            <div class="result-content">
+                <h2 id="result-title">Игра окончена, мяч упал :(</h2>
+                <p id="result-message"></p>
+                <div class="result-actions">
+                    <button id="end-restart-btn" class="result-btn">Играть снова</button>
+                    <button id="level-select-btn" class="result-btn">Выбор уровня</button>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+    <script src="fingerBall.js" defer></script>
+    <script src="fingerBall-customization.js" defer></script>
+</body>
+
+</html>

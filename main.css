@@ -1,0 +1,132 @@
+body {
+    flex-direction: column;
+    display: flex;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+#gameLabel {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgba(149, 139, 255);
+}
+
+body { font-family: 'Roboto', sans-serif; }
+h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+}
+
+.main {
+  flex: 1;
+  margin-top: 80px;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+    font-size: 26px;
+}
+
+header nav {
+    padding: 0 2rem;
+    margin: 0;
+    margin-left: auto;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.5em;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+nav a.active {
+  border-bottom: 0.15rem solid rgba(149, 139, 255);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.75em;
+    margin-top: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.reg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 6px;
+    width: 50rem;
+    height: 25rem;
+    margin-top: 10rem;
+    row-gap: 5rem;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.reg-container h2 {
+    font-size: 2rem;
+}
+
+#regInput {
+    height: 2rem;
+    width: 15rem;
+    font-size: 1.5rem;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+#regBtn {
+    height: 3rem;
+    width: 8rem;
+    font-size: 1.5rem;
+    background-color: rgba(149, 139, 255, 0.5);
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+#regBtn:hover {
+    cursor: pointer;
+    background-color: rgba(149, 139, 255);
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кастомизация - Волейбол 2D</title>
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="../game.css">
+    <link rel="stylesheet" href="customization.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap&subset=cyrillic"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="currentPlayer-container">
+            <span id="currentPlayerLabel">Текущий игрок: </span>
+            <span id="currentPlayerValue">Slavik78</span>
+        </div>
+        <nav id="nav-menu">
+            <a href="../../index.html">Регистрация</a>
+            <a href="../game.html">Игры</a>
+            <a href="#">Вернуться на сайт</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="content">
+            <button class="back-btn" onclick="window.location.href='game.html'">← Назад</button>
+
+            <div class="customization-container">
+                <h1>🎨 Кастомизация игр</h1>
+
+                <div class="game-selector">
+                    <div class="game-option active" data-game="hit-target">
+                        <div class="game-icon">🎯</div>
+                        <div class="game-info">
+                            <h3>Попади в цель</h3>
+                            <p>Настройте цвета мяча, поля, сетки и зоны попадания</p>
+                        </div>
+                    </div>
+
+                    <div class="game-option" data-game="finger-ball">
+                        <div class="game-icon">🏐</div>
+                        <div class="game-info">
+                            <h3>FingerBall</h3>
+                            <p>Измените цвета мяча, руки, фона и эффектов</p>
+                        </div>
+                    </div>
+
+                    <div class="game-option" data-game="reaction-game">
+                        <div class="game-icon">⚡</div>
+                        <div class="game-info">
+                            <h3>Игра на реакцию</h3>
+                            <p>Настройте цвета кнопок, фона и индикаторов</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-customization active" data-game="hit-target">
+
+                    <h2>Настроить вручную</h2>
+                    <div class="color-options">
+                        <div class="color-option">
+                            <label>Мяч:</label>
+                            <input type="color" id="ht-ballColor" value="#f0c030">
+                        </div>
+                        <div class="color-option">
+                            <label>Фон:</label>
+                            <input type="color" id="ht-bgColor" value="#f0c030">
+                        </div>
+                        <div class="color-option">
+                            <label>Небо:</label>
+                            <input type="color" id="ht-fieldColor" value="#9fd3ff">
+                        </div>
+                        <div class="color-option">
+                            <label>Земля:</label>
+                            <input type="color" id="ht-groundColor" value="#d39b55">
+                        </div>
+                        <div class="color-option">
+                            <label>Сетка:</label>
+                            <input type="color" id="ht-netColor" value="#2b2b2b">
+                        </div>
+                        <div class="color-option">
+                            <label>Зона:</label>
+                            <input type="color" id="ht-zoneColor" value="#ffffff">
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="action-btn apply-btn" onclick="applyColors('hit-target')">
+                            Применить к игре
+                        </button>
+                        <button class="action-btn reset-btn" onclick="resetGameColors('hit-target')">
+                            Сбросить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="color-customization" data-game="finger-ball">
+
+                    <h2>Настроить вручную</h2>
+                    <div class="color-options">
+                        <div class="color-option">
+                            <label>Мяч:</label>
+                            <input type="color" id="fb-ballColor" value="#FF6B6B">
+                        </div>
+                        <div class="color-option">
+                            <label>Курсор:</label>
+                            <input type="color" id="fb-handColor" value="#4CAF50">
+                        </div>
+                        <div class="color-option">
+                            <label>Фон:</label>
+                            <input type="color" id="fb-bgColor" value="#dff4ff">
+                        </div>
+                        <div class="color-option">
+                            <label>Текст:</label>
+                            <input type="color" id="fb-textColor" value="#333333">
+                        </div>
+                        <div class="color-option">
+                            <label>Эффекты:</label>
+                            <input type="color" id="fb-effectColor" value="#FFD700">
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="action-btn apply-btn" onclick="applyColors('finger-ball')">
+                            Применить к игре
+                        </button>
+                        <button class="action-btn reset-btn" onclick="resetGameColors('finger-ball')">
+                            Сбросить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="color-customization" data-game="reaction-game">
+
+                    <h2>Настроить вручную</h2>
+                    <div class="color-options">
+                        <div class="color-option">
+                            <label>Фон:</label>
+                            <input type="color" id="rg-bgColor" value="#f8f9fa">
+                        </div>
+                        <div class="color-option">
+                            <label>Небо:</label>
+                            <input type="color" id="rg-skyColor" value="#f8f9fa">
+                        </div>
+                        <div class="color-option">
+                            <label>Текст:</label>
+                            <input type="color" id="rg-textColor" value="#333333">
+                        </div>
+                        <div class="color-option">
+                            <label>Мяч:</label>
+                            <input type="color" id="rg-ballColor" value="#FF6B6B">
+                        </div>
+                        <div class="color-option">
+                            <label>Игрок:</label>
+                            <input type="color" id="rg-playerColor" value="#4CAF50">
+                        </div>
+                        <div class="color-option">
+                            <label>Земля:</label>
+                            <input type="color" id="rg-groundColor" value="#9fd3ff">
+                        </div>
+                        <div class="color-option">
+                            <label>Сетка:</label>
+                            <input type="color" id="rg-netColor" value="#2b2b2b">
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="action-btn apply-btn" onclick="applyColors('reaction-game')">
+                            Применить к игре
+                        </button>
+                        <button class="action-btn reset-btn" onclick="resetGameColors('reaction-game')">
+                            Сбросить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span style="color: rgb(148, 139, 255); margin-left: 1.5rem;">Кастомизация игр</span>
+    </footer>
+    <script>
+        const playerName = localStorage.getItem('currentPlayer');
+        if (playerName) {
+            document.getElementById('currentPlayerValue').textContent = playerName;
+        } else {
+            window.location.href = '../../index.html';
+        }
+    </script>
+    <script src="customization.js"></script>
+</body>
+
+</html>

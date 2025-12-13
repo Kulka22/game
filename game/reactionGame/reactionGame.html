@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Game</title>
+    <link rel="stylesheet" href="reactionGame.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap&subset=cyrillic"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="content">
+        <div id="start-screen" class="screen active">
+            <div class="result-content">
+                <h2 id="result-title">Игра на реакцию</h2>
+                <p id="result-message"></p>
+                <div class="result-actions">
+                    <button id="start-btn" class="start-btn">Играть</button>
+                    <button id="back-btn" class="start-btn">Назад</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <div class="game-info">
+                <span>Очки: <span id="current-scores">0</span></span>
+                <span>Рекорд: <span id="record">0</span></span>
+            </div>
+
+            <div id="game">
+                <div id="ground"></div>
+                <div class="net"></div>
+                <div id="player" class="player"></div>
+            </div>
+
+            <div class="game-instruction">
+                Управление через клавиши: A - влево; D - вправо
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <h2 id="result-title">Результат</h2>
+                <p id="result-message"></p>
+                <div class="result-actions">
+                    <button id="restart-btn" class="result-btn">Играть снова</button>
+                    <button id="level-select-btn" class="result-btn">Выбор уровня</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="reactionGame.js" defer></script>
+    <script src="reactionGame-customization.js" defer></script>
+</body>
+
+</html>
