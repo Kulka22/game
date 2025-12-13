@@ -9,7 +9,8 @@ const levelSettings = {
     },
     3: {
         netMoving: true,
-        ballMoving: true
+        ballMoving: true,
+        ballMoveSpeed: 1.2
     }
 };
 
@@ -544,5 +545,6 @@ function unlockAllLevels() {
         });
     });
 }
+
 
 init();
