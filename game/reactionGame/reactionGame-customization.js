@@ -62,11 +62,10 @@ function applyColorsToReactionGame(colors) {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         loadReactionGameColors();
-        setupColorListener();
     });
 } else {
     loadReactionGameColors();
-    setupColorListener();
 }
+
 
 window.updateReactionGameColors = loadReactionGameColors;
