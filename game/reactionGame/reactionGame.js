@@ -312,6 +312,7 @@ function checkPlayerHit() {
     const distance = Math.sqrt(dx * dx + dy * dy);
 
     if (distance < playerRadius + ballRadius) {
+        lastCollisionTime = now;
         ballVelY = 4 + 80 * 0.15;
         ballVelX = (3 + 30 * 0.20) * -1;
         currentBall.style.left = ballPosX + "px";
@@ -370,5 +371,6 @@ function updateUI() {
     currentScoresElement.textContent = gameState.currentScores;
     recordElement.textContent = record;
 }
+
 
 init();
